@@ -1,5 +1,5 @@
 var chai = require('chai');
-var expext = chai.expect;
+var expect = chai.expect;
 var CartSummary = require('./../../src/part1/cart-summary');
 
 describe('CartSummary', function(){
@@ -19,6 +19,6 @@ describe('CartSummary', function(){
         }
         ]);
 
-        expext(cartSummary.getSubtotal()).to.equal(310);
+        expect(cartSummary.getSubtotal()).to.equal(300);
     });
 });
