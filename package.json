@@ -1,0 +1,23 @@
+{
+  "name": "mochausage",
+  "version": "1.0.0",
+  "description": "Mocha usage",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests --recursive --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ldaher/mochausage.git"
+  },
+  "author": "Luciano Daher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ldaher/mochausage/issues"
+  },
+  "homepage": "https://github.com/ldaher/mochausage#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
