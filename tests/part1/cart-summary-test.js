@@ -19,6 +19,6 @@ describe('CartSummary', function(){
         }
         ]);
 
-        expext(cartSummary.getSubtotal()).to.equal(300);
+        expext(cartSummary.getSubtotal()).to.equal(310);
     });
 });

@@ -12,4 +12,4 @@ CartSummary.prototype.getSubtotal = function() {
     return 0;
 }
 
-module.exports = CartSummary;
+//module.exports = CartSummary;
