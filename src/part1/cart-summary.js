@@ -1,3 +1,5 @@
+var tax = require('./tax');
+
 function CartSummary(items){
     this._items = items;
 }
