@@ -7,6 +7,7 @@ module.exports = {
             return done({ amount: 0 });
         }
 
+        console.log('Performing POST request...');
         request.post({
             url: 'https://some-tax-service.com/request',
             method: 'POST',

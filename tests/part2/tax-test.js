@@ -4,7 +4,7 @@ var tax = require('./../../src/part2/tax');
 var expect = chai.expect;
 
 describe('tax', function () {
-    it('calculate() should resolve with an object containing the tax details', function (done) {
+/*    it('calculate() should resolve with an object containing the tax details', function (done) {
         nock('https://some-tax-service.com')
             .post('/request')
             .reply(200, {
@@ -15,18 +15,25 @@ describe('tax', function () {
             expect(taxDetails).to.eql({ amount: 7 });
             done();
         });
-    });
+    });*/
 
     it('calculate() should send the subtotal in the request', function (done) {
+       
+        console.log('Nock server will be started...');
         nock('https://some-tax-service.com')
             .post('/request')
             .reply(200, function (uri, requestBody) {
-                return {
-                    // amount: JSON.parse(requestBody).subtotal * 0.10
-                    //the above JSON var signing isn't working on VS Code
-                    amount: requestBody.subtotal * 0.10
-                };
+                try {
+                    return {
+                        amount: JSON.parse(requestBody).subtotal * 0.10
+                    };
+                } catch (error) {
+                    return {
+                        amount: requestBody.subtotal * 0.10
+                    };
+                }
             });
+        console.log('Nock server started...');
 
         tax.calculate(100, 'CA', function (taxDetails) {
             expect(taxDetails).to.eql({ amount: 10 });
