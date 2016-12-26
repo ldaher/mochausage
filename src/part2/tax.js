@@ -1,6 +1,7 @@
 var request = require('request');
 
 module.exports = {
+    //TODO understand what this fucking code does!!!
     calculate: function (subtotal, state, done) {
         if (state !== 'CA') {
             return done({ amount: 0 });
