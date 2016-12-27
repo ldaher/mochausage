@@ -3,7 +3,7 @@ var nock = require('nock');
 var tax = require('./../../src/part2/tax');
 var expect = chai.expect;
 
-describe('tax', function () {
+describe('tax to consume external URL and return value', function () {
 /*    it('calculate() should resolve with an object containing the tax details', function (done) {
         nock('https://some-tax-service.com')
             .post('/request')
@@ -23,6 +23,7 @@ describe('tax', function () {
         nock('https://some-tax-service.com')
             .post('/request')
             .reply(200, function (uri, requestBody) {
+                console.log('Asynchronous response...');
                 try {
                     return {
                         amount: JSON.parse(requestBody).subtotal * 0.10
